@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Rings">
+        <attr name="rings_text_size" format="dimension" />
+        <attr name="rings_text_margin_left" format="dimension" />
+        <attr name="rings_inner_stroke_width" format="dimension" />
+        <attr name="rings_inner_stroke_width_unfinished" format="dimension" />
+        <attr name="rings_outer_stroke_width" format="dimension" />
+        <attr name="rings_outer_stroke_width_unfinished" format="dimension" />
+
+        <attr name="rings_unfinished_color" format="color" />
+        <attr name="rings_default_filled_color" format="color" />
+
+        <attr name="rings_inner_first_color" format="color" />
+        <attr name="rings_inner_second_color" format="color" />
+        <attr name="rings_inner_third_color" format="color" />
+        <attr name="rings_overall_color" format="color" />
+
+        <attr name="rings_inner_first_progress" format="float" />
+        <attr name="rings_inner_second_progress" format="float" />
+        <attr name="rings_inner_third_progress" format="float" />
+        <attr name="rings_overall_progress" format="float" />
+
+        <attr name="rings_inner_first_text" format="string" />
+        <attr name="rings_inner_second_text" format="string" />
+        <attr name="rings_inner_third_text" format="string" />
+        <attr name="rings_overall_text" format="string" />
+
+    </declare-styleable>
+</resources>

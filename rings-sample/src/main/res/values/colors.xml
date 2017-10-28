@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/inner_third_ring_color</color>
+    <color name="colorPrimaryDark">@color/overall_ring_color</color>
+    <color name="colorAccent">@color/inner_first_ring_color</color>
+
+    <color name="inner_first_ring_color">#D0DD2B</color>
+    <color name="inner_second_ring_color">#98C73D</color>
+    <color name="inner_third_ring_color">#67CDDC</color>
+    <color name="overall_ring_color">#00A9E0</color>
+
+    <color name="ring_unfinished_color">#f2f2f2</color>
+    <color name="ring_default_filled_color">#e6e6e6</color>
+
+</resources>
