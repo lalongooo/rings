@@ -7,15 +7,6 @@ They get highlighted if you click on the ring or text.
 # Setup
 ## 1. Provide the gradle dependency
 
-For now, you have the specify the maven repository URL in your project level `build.gradle` file
-since it is being synchronized with `jcenter()`. This should not be necessary in the coming weeks (maybe in 1-2 weeks)
-
-```
-maven {
-    url 'https://dl.bintray.com/lalongooo/maven/'
-}
-```
-
 Add the gradle dependency to your `app` module `build.gradle` file:
 
 ```
