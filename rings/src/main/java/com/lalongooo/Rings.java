@@ -374,15 +374,10 @@ public class Rings extends View {
         innerSecondText = attributes.getString(R.styleable.Rings_rings_inner_second_text);
         innerThirdText = attributes.getString(R.styleable.Rings_rings_inner_third_text);
 
-        setRingOverallProgress(attributes.getFloat(R.styleable.Rings_rings_overall_progress, defaultRingOverallProgress));
-        setRingInnerThirdProgress(attributes.getFloat(R.styleable.Rings_rings_inner_third_progress, defaultRingInnerThirdProgress));
-        setRingInnerSecondProgress(attributes.getFloat(R.styleable.Rings_rings_inner_second_progress, defaultRingInnerSecondProgress));
-        setRingInnerFirstProgress(attributes.getFloat(R.styleable.Rings_rings_inner_first_progress, defaultRingInnerFirstProgress));
-
-//        ringOverallProgress = attributes.getFloat(R.styleable.Rings_rings_overall_progress, defaultRingOverallProgress);
-//        ringInnerThirdProgress = attributes.getFloat(R.styleable.Rings_rings_inner_third_progress, defaultRingInnerThirdProgress);
-//        ringInnerSecondProgress = attributes.getFloat(R.styleable.Rings_rings_inner_second_progress, defaultRingInnerSecondProgress);
-//        ringInnerFirstProgress = attributes.getFloat(R.styleable.Rings_rings_inner_first_progress, defaultRingInnerFirstProgress);
+        setRingOverallProgress(attributes.getFloat(R.styleable.Rings_rings_overall_progress, defaultRingOverallProgress), false);
+        setRingInnerThirdProgress(attributes.getFloat(R.styleable.Rings_rings_inner_third_progress, defaultRingInnerThirdProgress), false);
+        setRingInnerSecondProgress(attributes.getFloat(R.styleable.Rings_rings_inner_second_progress, defaultRingInnerSecondProgress), false);
+        setRingInnerFirstProgress(attributes.getFloat(R.styleable.Rings_rings_inner_first_progress, defaultRingInnerFirstProgress), false);
     }
 
     private void initPainters() {
@@ -460,6 +455,9 @@ public class Rings extends View {
         invalidate();
     }
 
+    /**
+     * @return One of {@link #RING_OVERALL}, {@link #THIRD_INNER_RING}, {@link #SECOND_INNER_RING} or {@link #FIRST_INNER_RING}
+     */
     public short getHighlightedRing() {
         return highlightedRing;
     }
@@ -468,42 +466,78 @@ public class Rings extends View {
         return ringOverallProgress;
     }
 
-    public void setRingOverallProgress(float overAllProgress) {
+    /**
+     * Sets the progress for the overall ring
+     *
+     * @param overAllProgress progress for the overall ring. From 0 to 100.
+     * @param invalidate      causes the view to be redrawn itself by calling {@link View#invalidate()}
+     */
+    public void setRingOverallProgress(float overAllProgress, boolean invalidate) {
         this.ringOverallProgress = (emptyArcAngle / 100f) * overAllProgress;
-        invalidate();
+        if (invalidate)
+            invalidate();
     }
 
     public float getChartRingSpeedProgress() {
         return ringInnerThirdProgress;
     }
 
-    public void setRingInnerThirdProgress(float innerThirdProgress) {
+    /**
+     * Sets the progress for the third inner ring
+     *
+     * @param innerThirdProgress progress for the overall ring. From 0 to 100.
+     * @param invalidate         causes the view to be redrawn itself by calling {@link View#invalidate()}
+     */
+    public void setRingInnerThirdProgress(float innerThirdProgress, boolean invalidate) {
         this.ringInnerThirdProgress = (emptyArcAngle / 100f) * innerThirdProgress;
-        invalidate();
+        if (invalidate)
+            invalidate();
     }
 
     public float getChartRingBrakingProgress() {
         return ringInnerSecondProgress;
     }
 
-    public void setRingInnerSecondProgress(float innerSecondProgress) {
+    /**
+     * Sets the progress for the second inner ring
+     *
+     * @param innerSecondProgress progress for the overall ring. From 0 to 100.
+     * @param invalidate          causes the view to be redrawn itself by calling {@link View#invalidate()}
+     */
+    public void setRingInnerSecondProgress(float innerSecondProgress, boolean invalidate) {
         this.ringInnerSecondProgress = (emptyArcAngle / 100f) * innerSecondProgress;
-        invalidate();
+        if (invalidate)
+            invalidate();
     }
 
     public float getChartRingAccelerationProgress() {
         return ringInnerFirstProgress;
     }
 
-    public void setRingInnerFirstProgress(float innerFirstProgress) {
+    /**
+     * Sets the progress for the first inner ring
+     *
+     * @param innerFirstProgress progress for the overall ring. From 0 to 100.
+     * @param invalidate         causes the view to be redrawn itself by calling {@link View#invalidate()}
+     */
+    public void setRingInnerFirstProgress(float innerFirstProgress, boolean invalidate) {
         this.ringInnerFirstProgress = (emptyArcAngle / 100f) * innerFirstProgress;
-        invalidate();
+        if (invalidate)
+            invalidate();
     }
 
+    /**
+     * Sets the rings to be clickable
+     *
+     * @param areRingsClickable Whether the rings are clickable or not.
+     */
     public void setRingsClickable(boolean areRingsClickable) {
         this.areRingsClickable = areRingsClickable;
     }
 
+    /**
+     * @return True if rings are clickable, false otherwise. If {@link #setRingsClickable(boolean)} has not been called, returns true.
+     */
     public boolean getRingsClickable() {
         return this.areRingsClickable;
     }
