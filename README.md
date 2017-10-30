@@ -1,3 +1,5 @@
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Android%20Rings-green.svg?style=flat )]( https://android-arsenal.com/details/1/6382 )
+
 # Android Rings
 A simple chart for Android with three indicators and one more to indicate overall summary.
 They get highlighted if you click on the ring or text.
